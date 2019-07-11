@@ -260,10 +260,6 @@ MODAL AGREGAR VENTA
           <button type="submit" class="btn btn-primary">Guardar</button>
         </div>
       </form>
-      <?php
-        $crearVenta = new ControladorVentas();
-        $crearVenta -> ctrCrearVenta();          
-      ?>
     </div>
   </div>
 </div>

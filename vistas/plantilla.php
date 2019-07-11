@@ -28,7 +28,7 @@ session_start();
 
      <!-- DataTables -->
   <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
-    <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/responsive.bootstrap.min.css">
+  <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/responsive.bootstrap.min.css">
   
   <!--====  Fin CSS  ====-->
   
@@ -54,6 +54,10 @@ session_start();
 
   <!-- SweetAlert 2 -->
   <script src="vistas/plugins/sweetalert2/sweetalert2.all.js"></script>
+  <!-- InputMask -->
+  <script src="vistas/plugins/input-mask/jquery.inputmask.js"></script>
+  <script src="vistas/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+  <script src="vistas/plugins/input-mask/jquery.inputmask.extensions.js"></script>
   
   <!--====  FIN JQUERY  ====-->
 

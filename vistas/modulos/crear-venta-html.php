@@ -28,33 +28,17 @@
            <div class="box-header with-border">
              
            </div>
-           <form role="form" method="post" class="formularioVenta">
            <div class="box-body">
              <form rol="form" method="post">
                <div class="box">
-
                 <!--==========================================
                 =            ENTRADA DEL VENDEDOR            =
                 ===========================================-->
                  <div class="form-group">
-                  <div class="row">
-                    <div class="col-xs-6">
-                      <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                        <input type="text" class="form-control" id="nuevaVenta" name="nuevaVenta" value="<?php echo $_SESSION["nombre"] ?>" readonly>
-                        <input type="hidden" name="idVendedor" value="<?php echo $_SESSION["id"] ?>">
-                      </div> 
-                    </div>
-                    <!--==========================================
-                       =            ENTRADA DEL CLIENTE          =
-                    ===========================================-->
-                    <div class="col-xs-6">
-                      <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-male"></i></span>
-                        <input type="text" class="form-control" id="nuevoCliente" name="nuevoCliente" placeholder="Nombre del Cliente">
-                      </div> 
-                    </div>
-                  </div>   
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" class="form-control" id="nuevoVendedor" name="nuevoVendedor" value="Usuario Administrador" readonly>
+                  </div>    
                  </div>
                  <!--==========================================
                 =            ENTRADA FECHA DE ENTREGA            =
@@ -65,7 +49,15 @@
                     <input type="text" class="form-control" id="nuevaFechaEntrega" name="nuevaFechaEntrega" placeholder="Fecha de Entrega" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask required>
                   </div>    
                  </div>
-
+                 <!--==========================================
+                =            ENTRADA DEL CLIENTE          =
+                ===========================================-->
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-male"></i></span>
+                    <input type="text" class="form-control" id="nuevoCliente" name="nuevoCliente" placeholder="Nombre del Cliente">
+                  </div>    
+                 </div>
                  <!--==========================================
                 =            ENTRADA DEL DIRECCION         =
                 ===========================================-->
@@ -93,13 +85,13 @@
                     <div class="col-xs-6">
                       <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                        <input type="text" class="form-control" id="nuevoTelefono" name="nuevoTelefono" placeholder="Teléfono" data-inputmask="'mask':'(999) 9999-9999'" data-mask required>
+                        <input type="text" class="form-control" id="nuevoTelefono" name="nuevoTelefono" placeholder="Teléfono">
                       </div>
                     </div>
                     <div class="col-xs-6">
                       <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-mobile"></i></span>
-                        <input type="text" class="form-control" id="nuevoCelular" name="nuevoCelular" placeholder="Celular" data-inputmask="'mask':'(999) 9999-9999'" data-mask>
+                        <input type="text" class="form-control" id="nuevoCelular" name="nuevoCelular" placeholder="Celular">
                       </div>
                     </div>
                   </div>  
@@ -110,7 +102,7 @@
                 <div class="form-group">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-openid"></i></span>
-                    <textarea class="form-control" rows="3" placeholder="Referencia ..." name="nuevaReferencia"></textarea>
+                    <textarea class="form-control" rows="3" placeholder="Referencia ..."></textarea>
                   </div>    
                 </div>
                </div>
@@ -127,7 +119,7 @@
                   <div class="form-group">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span>
-                    <input type="text" class="form-control" id="nuevoProducto1" name="nuevoProducto1" placeholder="Ingrese Producto 1">
+                    <input type="text" class="form-control" id="nuevoProducto" name="nuevoProducto" placeholder="Ingrese Producto 1">
                   </div>    
                 </div>
                 <!--==========================================
@@ -136,7 +128,7 @@
                 <div class="form-group">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span>
-                    <input type="text" class="form-control" id="nuevoProducto2" name="nuevoProducto2" placeholder="Ingrese Producto 2">
+                    <input type="text" class="form-control" id="nuevoProducto" name="nuevoProducto" placeholder="Ingrese Producto 2">
                   </div>    
                 </div>
                 <!--==========================================
@@ -145,7 +137,7 @@
                 <div class="form-group">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span>
-                    <input type="text" class="form-control" id="nuevoProducto3" name="nuevoProducto3" placeholder="Ingrese Producto 3">
+                    <input type="text" class="form-control" id="nuevoProducto" name="nuevoProducto" placeholder="Ingrese Producto 3">
                   </div>    
                 </div>
                 <!--==========================================
@@ -185,7 +177,7 @@
                 <div class="form-group">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-pencil-square-o"></i></span>
-                    <textarea class="form-control" rows="4" placeholder="Observació ..." name="nuevaObservacion"></textarea>
+                    <textarea class="form-control" rows="4" placeholder="Observació ..."></textarea>
                   </div>    
                 </div>
                 </div>
@@ -195,12 +187,6 @@
           <button class="btn btn-primary">Guardar Cambios</button>
         </div>
       </form>
-      <?php
-
-          $guardarVenta = new ControladorVentas();
-          $guardarVenta -> ctrCrearVenta();
-          
-        ?>
     </div>
   </section>
 </div>
