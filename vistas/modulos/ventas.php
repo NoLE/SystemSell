@@ -117,7 +117,7 @@ MODAL AGREGAR VENTA
                 <div class="col-xs-6">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-calendar-check-o"></i></span>
-                    <input type="text" class="form-control" id="nuevaFechaEntrega" name="nuevaFechaEntrega" placeholder="Fecha de Entrega" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask required>
+                    <input type="text" class="form-control" id="nuevaFechaEntrega" name="nuevaFechaEntrega" placeholder="Fecha de Entrega" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask required>
                   </div>
                 </div>
                 <!-- ENTRADA ID Y NOMBRE VENDEDOR -->

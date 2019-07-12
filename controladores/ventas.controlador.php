@@ -15,23 +15,20 @@ class ControladorVentas{
 	static public function ctrCrearVenta(){
 		if (isset($_POST['nuevaFechaEntrega'])) {
 			if (preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoCliente"]) &&
-				preg_match('/^[#\.\-a-zA-Z0-9 ]+$/', $_POST["nuevaDireccion"]) &&
-				preg_match('/^[#\.\-a-zA-Z0-9 ]+$/', $_POST["nuevaComuna"]) &&
-				preg_match('/^[()\-0-9 ]+$/', $_POST["nuevoTelefono"]) &&
-				preg_match('/^[()\-0-9 ]+$/', $_POST["nuevoCelular"]) &&
+				preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\.\,\;\#\ ]+$/', $_POST["nuevaDireccion"]) &&
+				preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\.\,\;\#\ ]+$/', $_POST["nuevaComuna"]) &&
+				preg_match('/^[0-9\(\)\-\ ]+$/', $_POST["nuevoTelefono"]) &&
+				preg_match('/^[0-9\(\)\-\ ]+$/', $_POST["nuevoCelular"]) &&
 				preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoProducto1"]) &&
 				preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoProducto2"]) &&
 				preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoProducto3"]) &&
 				preg_match('/^[1-9][0-9]+$/', $_POST["nuevoValor"]) &&
-				preg_match('/^[0-9]+$/', $_POST["nuevaComision"]) &&
-				preg_match('/^[#\.\-a-zA-Z0-9 ]+$/', $_POST["nuevoEstadoComision"]) &&
-				preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaReferencia"]) &&
-				preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaObservacion"])) {
+				preg_match('/^[1-9][0-9]+$/', $_POST["nuevaComision"])) {
 				
 				$tabla = "ventas";
-				$datos = array("id_vendedor"=>$_POST["idVendedor"],
+				$datos = array("fecha_entrega"=>$_POST["nuevaFechaEntrega"],
+							   "id_vendedor"=>$_POST["idVendedor"],
 							   "cliente"=>$_POST["nuevoCliente"],
-					           "fecha_entrega"=>$_POST["nuevaFechaEntrega"],
 					           "direccion"=>$_POST["nuevaDireccion"],
 					           "comuna"=>$_POST["nuevaComuna"],
 					           "telefono"=>$_POST["nuevoTelefono"],
@@ -47,7 +44,7 @@ class ControladorVentas{
 					       	);
 				$respuesta = ModeloVentas::mdlIngresarVenta($tabla, $datos);
 
-				/*if ($respuesta == "ok") {
+				if ($respuesta == "ok") {
 					echo'<script>
 
 					swal({
@@ -64,8 +61,8 @@ class ControladorVentas{
 								})
 
 					</script>';
-				}*/
-			} /*else {
+				}
+			} else {
 				echo'<script>
 
 					swal({
@@ -76,14 +73,14 @@ class ControladorVentas{
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "crear-venta";
+							window.location = "ventas";
 
 							}
 						})
 
 			  	</script>';
 
-			}*/
+			}
 		}
 	}
 }

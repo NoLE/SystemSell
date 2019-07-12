@@ -7,7 +7,8 @@ class ModeloVentas{
 	CREAR VENTAS
 	=============================================*/
 	static public function mdlIngresarVenta($tabla, $datos){
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(fecha_entrega, id_vendedor, cliente, direccion, comuna, referencia, producto1, producto2, producto3, valor, , observacion, comision, estado_comision, telefono, celular) VALUES (:fecha_entrega, :id_vendedor, :cliente, :direccion, :comuna, :referencia, :producto1, :producto2, :producto3, :valor, :observacion, :comision, :estado_comision, :telefono, :celular)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(fecha_entrega, id_vendedor, cliente, direccion, comuna, referencia, producto_1, producto_2, producto_3, valor, observacion, comision, estado_comision, telefono, celular) VALUES (:fecha_entrega, :id_vendedor, :cliente, :direccion, :comuna, :referencia, :producto1, :producto2, :producto3, :valor, :observacion, :comision, :estado_comision, :telefono, :celular)");
+		
 			$stmt->bindParam(":fecha_entrega", $datos["fecha_entrega"], PDO::PARAM_STR);
 			$stmt->bindParam(":id_vendedor", $datos["id_vendedor"], PDO::PARAM_INT);
 			$stmt->bindParam(":cliente", $datos["cliente"], PDO::PARAM_STR);
