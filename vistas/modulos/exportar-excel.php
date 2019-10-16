@@ -62,8 +62,10 @@
               <tbody>
                 <?php 
     
-                    $item = null;
-                    $valor = null;
+                    if (isset($_POST['fechaExport']) == false) {
+                      $item = null;
+                      $valor = null;
+                    }
                     $export = ControladorVentas::ctrExportarVentas($item, $valor);
                     foreach ($export as $key => $value) {
                       echo '
