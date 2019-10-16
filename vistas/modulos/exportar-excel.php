@@ -17,7 +17,7 @@
       	<div class="form-group">
       		<input type="text" class="form-control" name="fechaExport" id="exportarExcel" placeholder="Seleccione Fecha">
       	</div>
-      	<input type="submit" class="btn btn-success btn-block" value="Consultar Fecha" name="consulFecha">
+      	<input type="submit" class="btn btn-success btn-block" value="Consultar Fecha">
       </form>
       
       <?php 
@@ -61,10 +61,11 @@
               </thead>
               <tbody>
                 <?php 
+    
                     $item = null;
                     $valor = null;
-                    $exportar = ControladorVentas::ctrExportarVentas($item, $valor);
-                    foreach ($exportar as $key => $value) {
+                    $export = ControladorVentas::ctrExportarVentas($item, $valor);
+                    foreach ($export as $key => $value) {
                       echo '
                           <tr>
                           <td>'.str_replace('-', '/', date('d-m-Y', strtotime($value["fecha_entrega"]))).'</td>';

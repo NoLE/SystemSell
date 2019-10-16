@@ -159,7 +159,7 @@ if (isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok" ) {
     $('#exportarExcel').datepicker({
       autoclose: true,
       language: 'es',
-      format: "dd/mm/yyyy"
+      format: "yyyy-mm-dd"
     })
   })
 </script>

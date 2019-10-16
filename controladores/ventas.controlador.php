@@ -220,8 +220,8 @@ class ControladorVentas{
 	static public function ctrExportarVentas($item, $valor){
 		$tabla1 = "ventas";
 		/*$tabla2 = "usuarios";*/
-		if (isset($_POST['consulFecha'])) {
-			$valor = $_POST['consulFecha'];
+		if (isset($_POST['fechaExport'])) {
+			$valor = $_POST['fechaExport'];
 			$item = "fecha_entrega";
 		}
 		
