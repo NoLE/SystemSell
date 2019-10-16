@@ -221,7 +221,8 @@ class ControladorVentas{
 		$tabla1 = "ventas";
 		/*$tabla2 = "usuarios";*/
 		if (isset($_POST['consulFecha'])) {
-			$item = $_POST['consulFecha'];
+			$valor = $_POST['consulFecha'];
+			$item = "fecha_entrega";
 		}
 		
 		$respuesta = ModeloVentas::mdlExportarVentas($tabla1, $item, $valor);

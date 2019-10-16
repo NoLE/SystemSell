@@ -137,7 +137,7 @@ class ModeloVentas{
 
 	static public function mdlExportarVentas($tabla1, $item, $valor){
 			if($item != null){
-				$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla1 WHERE $item = :$item ORDER BY fecha_entrega ASC");
+				$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla1 WHERE $item = :$item");
 				$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 				$stmt -> execute();
 
