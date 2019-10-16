@@ -53,6 +53,17 @@ class AjaxUsuarios{
 		echo json_encode($respuesta);
 
 	}
+	/*======================================
+	=            MOSTRAR USUARIO            =
+	======================================*/
+	
+	public $idDetalleUsuario;
+	public function ajaxDetalleUsuario(){
+		$item = "id";
+		$valor = $this->idDetalleUsuario;
+		$respuesta = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
+		echo json_encode($respuesta);
+	}
 	
 }
 /*=============================================

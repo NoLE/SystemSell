@@ -12,5 +12,6 @@ require_once 'modelos/productos.modelo.php';
 require_once 'modelos/usuarios.modelo.php';
 require_once 'modelos/ventas.modelo.php';
 
+
 $plantilla = new ControladorPlantilla();
 $plantilla -> ctrPlantilla();

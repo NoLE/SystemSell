@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script>
+ $(document).ready(function(){
+ $("#btn1").click(function(){
+ 	var variable = $("#texto").text();
+ alert(variable);
+ });
+ $("#btn2").click(function(){
+ alert($("#texto").html());
+ });
+ });
+ </script>
+ </head>
+ <body>
+<div id="texto">Este texto <b>esta en negrita</b></div>
+<button id="btn1">Solo Texto</button>
+ <button id="btn2">HTML</button>
+</body>
+ </html>

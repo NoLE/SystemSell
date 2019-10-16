@@ -181,11 +181,7 @@ class ControladorUsuarios
             showConfirmButton: true,
             confirmButtonText: "Cerrar",
             closeOnConfirm: false
-          }).then(function(result){
-              if(result.value){
-                window.location = "usuarios";
-              }
-            });
+          });
         </script>'; 
       }
     }
@@ -204,6 +200,8 @@ class ControladorUsuarios
 
       return $respuesta;
     }
+
+  
   
   /*=====  End of MOSTRAR USUARIOS  ======*/
 

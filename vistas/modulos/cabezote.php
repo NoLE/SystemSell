@@ -40,11 +40,34 @@
      				</a>
      				<!-- DROPDOWN-TOGGLE -->
 			     	<ul class="dropdown-menu">
+			     		<li class="user-header">
+			                <?php if ($_SESSION["foto"] != "") {
+     							echo'<img src="'.$_SESSION["foto"].'" alt="" class="img-circle">';
+		     					}else {
+		     						echo '<img src="vistas/img/usuarios/default/anonymous.png" alt="" class="img-circle">';
+		     					} ?>
+			                <p>
+			                  <span class="hidden-xs"><?php echo $_SESSION["nombre"];  ?></span>
+			                  <small><?php echo $_SESSION["perfil"];  ?></small>
+			                </p>
+			              </li>
 			     		<li class="user-body">
-			     			<div class="pull-right">
-			     				<a href="salir" class="btn btn-default btn-flat" >Salir</a>
-			     			</div>
-			     		</li>
+			                <div class="row">
+			                  <div class="col-xs-12 text-center">
+			                    <a href="#">Ventas</a>
+			                  </div>
+			                </div>
+			                <!-- /.row -->
+			              </li>
+			              <!-- Menu Footer-->
+			              <li class="user-footer">
+			                <div class="pull-left">
+			                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+			                </div>
+			                <div class="pull-right">
+			                  <a href="salir" class="btn btn-default btn-flat">Salir</a>
+			                </div>
+			              </li>
 			     	</ul>
      			</li>
      		</ul>

@@ -29,7 +29,8 @@ session_start();
      <!-- DataTables -->
   <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/responsive.bootstrap.min.css">
-  
+     <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="vistas/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
   <!--====  Fin CSS  ====-->
   
   <!--=====================================
@@ -58,6 +59,7 @@ session_start();
   <script src="vistas/plugins/input-mask/jquery.inputmask.js"></script>
   <script src="vistas/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
   <script src="vistas/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+
   
   <!--====  FIN JQUERY  ====-->
 
@@ -101,6 +103,7 @@ if (isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok" ) {
         $_GET["ruta"] == "ventas" ||
         $_GET["ruta"] == "crear-venta" ||
         $_GET["ruta"] == "reportes" ||
+        $_GET["ruta"] == "exportar-excel" ||
         $_GET["ruta"] == "salir") {
 
       include "modulos/".$_GET["ruta"].".php";
@@ -132,5 +135,33 @@ if (isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok" ) {
 <!-- ./wrapper -->
 <script src="vistas/js/plantilla.js"></script>
 <script src="vistas/js/usuarios.js"></script>
+<script src="vistas/js/ventas.js"></script>
+  <!-- Datepicker --> 
+<script src="vistas/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="vistas/js/datepicker-es.js"></script>
+<script src="vistas/js/jquery-dateformat.min.js"></script>
+<!-- Tabla exportar -->
+<script src="vistas/bower_components/tableExport/tableExport.js"></script>
+<script type="text/javascript" src="vistas/bower_components/tableExport/jquery.base64.js"></script>
+<script src="vistas/js/export.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.sidebar-menu').tree()
+
+    $('#nuevaFechaEntrega').datepicker({
+      autoclose: true,
+      language: 'es'
+    })
+    $('#editarFechaEntrega').datepicker({
+      autoclose: true,
+      language: 'es'
+    })
+    $('#exportarExcel').datepicker({
+      autoclose: true,
+      language: 'es',
+      format: "dd/mm/yyyy"
+    })
+  })
+</script>
 </body>
 </html>

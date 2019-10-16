@@ -14,28 +14,58 @@
     <section class="content">
 
       <!-- Default box -->
-      <div class="box">
-        <div class="box-header with-border">
-          <h3 class="box-title">Title</h3>
+        <div class="box-body">
+          <div class="row">
+          <div class="col-lg-4 col-xs-6">
+                <!-- small box -->
+            <div class="small-box bg-aqua">
+              <div class="inner">
+                <?php 
+                $campo = "valor";
+                $valorVentas = ControladorVentas::ctrSumarVentas($campo);
+                echo '<h3 class="claseTotalVentas" id="idTotalVentas">'.$valorVentas[0].'</h3>';
+                 ?>
+                <p>Total Ventas</p>
+              </div>
+              <div class="icon">
+                <i class="fa fa-shopping-cart"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-xs-6">
+                <!-- small box -->
+            <div class="small-box bg-green">
+              <div class="inner">
+                <?php 
+                    $campoComision = "comision";
+                    $valorComision = ControladorVentas::ctrSumarComision($campoComision);
+                      echo '<h3 class="claseTotalComision" id="idTotalComision">'.$valorComision[0].'</h3>';
+                 ?>
+                  <p>Total Comisiones</p>
+              </div>
+              <div class="icon">
+                <i class="fa fa-usd"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-xs-6">
+                <!-- small box -->
+            <div class="small-box bg-red">
+              <div class="inner">
+                <h3>20.000</h3>
+                <?php 
+                    setlocale(LC_TIME, "es_ES");
 
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-                    title="Collapse">
-              <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
+                   echo '<p>'.ucwords(strftime("%B")).', mes Actual</p>'; 
+                 ?>
+              </div>
+              <div class="icon">
+                <i class="fa fa-usd"></i>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="box-body">
-          Start creating your amazing application!
         </div>
-        <!-- /.box-body -->
-        <div class="box-footer">
-          Footer
-        </div>
-        <!-- /.box-footer-->
-      </div>
-      <!-- /.box -->
 
     </section>
     <!-- /.content -->

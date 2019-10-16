@@ -13,7 +13,7 @@
 
     <!-- Main content -->
     <section class="content">
-
+  
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
@@ -27,13 +27,13 @@
         </div>
         <div class="box-body">
           <div class="row">
-        <div class="col-lg-4 col-xs-12">
+        <div class="col-lg-6 col-xs-12">
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>150</h3>
+              <h3>Ventas</h3>
 
-              <p>Administrar Ventas</p>
+              <p>Administrador</p>
             </div>
             <div class="icon">
               <i class="ion ion-ios-albums"></i>
@@ -42,35 +42,26 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-4 col-xs-12">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-              <p>Agregar Venta</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-bag"></i>
-            </div>
-            <a href="crear-venta" class="small-box-footer">Más info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-4 col-xs-12">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3>65</h3>
-
-              <p>Administrar Usuarios</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-users"></i>
-            </div>
-            <a href="usuarios" class="small-box-footer">Más info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
+        <?php 
+          if ($_SESSION['perfil'] == "Administrador") {
+            echo '
+              <div class="col-lg-6 col-xs-12">
+                <!-- small box -->
+                <div class="small-box bg-yellow">
+                  <div class="inner">
+                    <h3>Usuarios</h3>
+                    <p>Administrador</p>
+                  </div>
+                  <div class="icon">
+                    <i class="fa fa-users"></i>
+                  </div>
+                  <a href="usuarios" class="small-box-footer">Más info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+            ';
+          }
+         ?>
+        
         <!-- ./col -->
       </div>
         </div>
@@ -82,6 +73,7 @@
       <!-- /.box -->
 
     </section>
+      
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
