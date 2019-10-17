@@ -11,7 +11,7 @@
     </section>
 
     <!-- Main content -->
-    <section class="content">
+    <section class="content" style="min-height: 100px !important;">
 	<div class="col-sm-4 col-sm-offset-4">
 		<form action="" class="form-signin" method="POST">
       	<div class="form-group">
@@ -62,11 +62,7 @@
               <tbody>
                 <?php 
     
-                    if (isset($_POST['fechaExport']) == false) {
-                      $item = null;
-                      $valor = null;
-                    }
-                    $export = ControladorVentas::ctrExportarVentas($item, $valor);
+                    $export = ControladorVentas::ctrExportarVentas();
                     foreach ($export as $key => $value) {
                       echo '
                           <tr>

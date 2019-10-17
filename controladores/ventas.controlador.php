@@ -217,12 +217,16 @@ class ControladorVentas{
 	
 	
 	/*=====  End of SUMAR DATOS  ======*/
-	static public function ctrExportarVentas($item, $valor){
+	static public function ctrExportarVentas(){
 		$tabla1 = "ventas";
-		/*$tabla2 = "usuarios";*/
 		if (isset($_POST['fechaExport'])) {
 			$valor = $_POST['fechaExport'];
 			$item = "fecha_entrega";
+		}else{
+
+			$item = null;
+			$valor = null;
+
 		}
 		
 		$respuesta = ModeloVentas::mdlExportarVentas($tabla1, $item, $valor);
